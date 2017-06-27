@@ -21,11 +21,3 @@ function getAnimalsByType(petsArray, animalType) {
 function mergeTwoArrays(array1, array2) {
     return _.concat(array1, array2);
 }
-
-// If we're running under Node, 
-if(typeof exports !== 'undefined') {
-    exports.sortByName = sortByName;
-    exports.getPeopleByGender = getPeopleByGender;
-    exports.getAnimalsByType = getAnimalsByType;
-    exports.mergeTwoArrays = mergeTwoArrays;
-}
