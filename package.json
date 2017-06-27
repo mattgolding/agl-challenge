@@ -1,0 +1,17 @@
+{
+    "name": "aglcodingexercide",
+    "version": "1.0.0",
+    "description": "AGL Coding Exercise",
+
+    "dependencies": {
+        //"browserify": "~14.4.0",
+        "http-server": "~0.10.0"
+        //"mocha": "~3.4.2",
+    },
+
+    "scripts": {
+        "webserver": "http-server"//,
+        //"build": "grunt",
+        //"test": "mocha"
+    }
+}
