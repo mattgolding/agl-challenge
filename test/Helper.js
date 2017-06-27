@@ -21,7 +21,7 @@ describe('Helper Testing', function () {
 
     describe('getPeopleByGender', function () {
         it('return only male users', function () {
-            var males = getPeopleByGender(mockData, 'male');
+            var males = getPeopleByGender(mockData, AGL.genders.male);
 
             expect(males.length).to.equal(2);
             expect(males[0].getName()).to.equal('Steve');
@@ -29,7 +29,7 @@ describe('Helper Testing', function () {
         });
 
         it('return only female users', function () {
-            var females = getPeopleByGender(mockData, 'female');
+            var females = getPeopleByGender(mockData, AGL.genders.female);
 
             expect(females.length).to.equal(2);
             expect(females[0].getName()).to.equal('Jennifer');
@@ -46,7 +46,7 @@ describe('Helper Testing', function () {
                 new Pet({"name":"Jim","type":"Cat"})
             ];
 
-            var pets = getAnimalsByType(mockPets, 'dog');
+            var pets = getAnimalsByType(mockPets, AGL.animalTypes.dog);
 
             expect(pets.length).to.equal(1);
             expect(pets[0].getName()).to.equal("Sam");
