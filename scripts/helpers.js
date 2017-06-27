@@ -6,24 +6,9 @@ function sortByName(array) {
 
 function getPeopleByGender(array, gender) {
     return _.filter(array, function (person) {
-        return person.getGender() === gender;
+        return person.getGender().toLowerCase() === gender;
     });
 }
-
-// function getPersonWithAnimalType(array, animalType) {
-//     return _.filter(array, function (person) {
-//         var pets = person.getPets(),
-//             hasCat = false;
-
-//         pets.forEach(function(pet) {
-//             if (pet.getType() === animalType) {
-//                 hasCat = true;
-//             }
-//         }, this);
-
-//         return hasCat;
-//     });
-// }
 
 function getAnimalsByType(petsArray, animalType) {
     return _.filter(petsArray, function (pet) {
@@ -35,4 +20,12 @@ function getAnimalsByType(petsArray, animalType) {
 
 function mergeTwoArrays(array1, array2) {
     return _.concat(array1, array2);
+}
+
+// If we're running under Node, 
+if(typeof exports !== 'undefined') {
+    exports.sortByName = sortByName;
+    exports.getPeopleByGender = getPeopleByGender;
+    exports.getAnimalsByType = getAnimalsByType;
+    exports.mergeTwoArrays = mergeTwoArrays;
 }

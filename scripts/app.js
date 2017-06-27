@@ -10,16 +10,16 @@ $(document).ready(function() {
         people.push(person);
     });
 
-    // get our list of array filtered by gender
+    // get two lists one for female and one for male
     var males = getPeopleByGender(people, 'Male');
     var females = getPeopleByGender(people, 'Female');
 
     // call the helper function as we do duplicate things inside for male and female
     writeOutGenderPetNames(males, 'cat', '.male-owned-pets');
-
     writeOutGenderPetNames(females, 'cat', '.female-owned-pets');
 });
 
+// Helper function for handling duplicate code
 function writeOutGenderPetNames (peopleList, animalType, domSelector) {
     var pets = [];
 
