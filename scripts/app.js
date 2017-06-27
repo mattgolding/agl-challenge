@@ -1,10 +1,5 @@
 $(document).ready(function() {
-    // get the info from ajax server
-    $.ajax({
-        url: 'http://agl-developer-test.azurewebsites.net/people.json',
-        dataType: 'jsonp', // jsonp for cross site domain
-        success: onLoadDataSuccess
-    });
+    serverMoch.runRequest('http://agl-developer-test.azurewebsites.net/people.json', onLoadDataSuccess);
 });
 
 function onLoadDataSuccess(data) {
@@ -17,12 +12,12 @@ function onLoadDataSuccess(data) {
     });
 
     // get two lists one for female and one for male
-    var males = getPeopleByGender(people, 'male');
-    var females = getPeopleByGender(people, 'female');
+    var males = getPeopleByGender(people, AGL.genders.male);
+    var females = getPeopleByGender(people, AGL.genders.female);
 
     // call the helper function as we do duplicate things inside for male and female
-    writeOutGenderPetNames(males, 'cat', '.male-owned-pets');
-    writeOutGenderPetNames(females, 'cat', '.female-owned-pets');
+    writeOutGenderPetNames(males, AGL.animalTypes.cat, '.male-owned-pets');
+    writeOutGenderPetNames(females, AGL.animalTypes.cat, '.female-owned-pets');
 }
 
 // Helper function for handling duplicate code
